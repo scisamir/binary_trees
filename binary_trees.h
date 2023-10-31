@@ -12,7 +12,8 @@
  * @left: Pointer to the left child node
  * @right: Pointer to the right child node
  */
-struct binary_tree_s {
+struct binary_tree_s
+{
 	int n;
 	struct binary_tree_s *parent;
 	struct binary_tree_s *left;
@@ -41,5 +42,10 @@ size_t binary_tree_depth(const binary_tree_t *tree);
 size_t binary_tree_size(const binary_tree_t *tree);
 size_t binary_tree_leaves(const binary_tree_t *tree);
 size_t binary_tree_nodes(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree);
+int binary_tree_is_full(const binary_tree_t *tree);
+int binary_tree_is_perfect(const binary_tree_t *tree);
+binary_tree_t *binary_tree_sibling(binary_tree_t *node);
+binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 
 #endif /* __MAIN_H__ */
