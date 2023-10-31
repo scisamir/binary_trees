@@ -1,6 +1,7 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 
@@ -21,6 +22,18 @@ struct binary_tree_s
 };
 
 typedef struct binary_tree_s binary_tree_t;
+
+/**
+ * struct queue - queue data structure
+ *
+ * @memb: pointer to queue member
+ * @next: pointer to the next node
+ */
+typedef struct queue
+{
+	binary_tree_t *memb;
+	struct queue *next;
+} queue_t;
 
 
 /* Prints a binary tree */
@@ -49,5 +62,6 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		const binary_tree_t *second);
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 
 #endif /* __MAIN_H__ */
